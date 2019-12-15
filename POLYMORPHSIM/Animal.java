@@ -2,17 +2,17 @@ package POLYMORPHSIM;
 
 public class Animal {
 
+    private String name;
+    private String gender;
+    private int age;
+    private double weight;
+
     public Animal(String name, String gender, int age, double weight) {
         this.name = name;
         this.gender = gender;
         this.age = age;
         this.weight = weight;
     }
-
-    private String name;
-    private String gender;
-    private int age;
-    private double weight;
 
     public String getName() {
         return name;
@@ -38,11 +38,6 @@ public class Animal {
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return "Name: " + this.name + "\n" + "Gender: " + this.gender + "\n" + "Age: " + this.age + "\n" + "Weight: " + this.weight;
-    }
-
     public double getWeight() {
         return weight;
     }
@@ -51,4 +46,8 @@ public class Animal {
         this.weight = weight;
     }
 
+    @Override
+    public String toString() {
+        return "Name: " + this.name + "\n" + "Gender: " + this.gender + "\n" + "Age: " + this.age + "\n" + "Weight: " + this.weight;
+    }
 }

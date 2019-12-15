@@ -3,7 +3,7 @@ package POLYMORPHSIM;
 public class Dog extends Mammal{
     private int paroshim;
 
-    public Dog(String name, String gender, int age, double weight, String milkUsage, int paroshim) {
+    public Dog(String name, String gender, int age, double weight, double milkUsage, int paroshim) {
         super(name, gender, age, weight, milkUsage);
         this.paroshim = paroshim;
     }
@@ -18,5 +18,10 @@ public class Dog extends Mammal{
 
     public void removeParoshim(){
         this.paroshim = 0;
+    }
+
+    @Override
+    public String toString(){
+        return super.toString() + "\n" + "paroshim: " + this.paroshim;
     }
 }
