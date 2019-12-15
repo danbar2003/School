@@ -22,6 +22,11 @@ public class Cat extends Mammal{
     }
 
     @Override
+    public void makeSound(){
+        System.out.println("I am cat, meowwwww");
+    }
+
+    @Override
     public String toString(){
         return super.toString() + "\n" + "is a street cat: " + this.isStreetCat;
     }

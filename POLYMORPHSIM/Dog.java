@@ -21,6 +21,11 @@ public class Dog extends Mammal{
     }
 
     @Override
+    public void makeSound(){
+        System.out.println("I am a dog, hoow hoooooooooow");
+    }
+
+    @Override
     public String toString(){
         return super.toString() + "\n" + "paroshim: " + this.paroshim;
     }

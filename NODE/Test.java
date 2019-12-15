@@ -1,9 +1,5 @@
 package NODE;
 
-import jdk.jshell.execution.Util;
-
-import javax.print.DocFlavor;
-
 public class Test {
     public static void main(String[] args) {
         Node<Object> chain = new Node<>(5);
