@@ -149,7 +149,7 @@ public class Utils {
         Node<T> meetingNode = findMeetingNode(chain1, chain2);
         Node<T> beforeMeetingNode1 = findNodeBefore(chain1, meetingNode);
         Node<T> beforeMeetingNode2 = findNodeBefore(chain2, meetingNode);
-
+        System.out.println("asd");
         if (beforeMeetingNode1 != null && beforeMeetingNode2 != null) {
             while (beforeMeetingNode1.hasNext() && beforeMeetingNode2.hasNext()) {
                 beforeMeetingNode1.setNext(new Node<T>(beforeMeetingNode1.getNextNode().getValue(), beforeMeetingNode1.getNextNode().getNextNode()));
