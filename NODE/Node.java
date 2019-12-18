@@ -28,7 +28,7 @@ public class Node<T> {
 
     @Override
     public String toString() {
-        return this.getValue() + " " + this.getNextNode();
+        return this.getValue() + "--> " + this.getNextNode();
     }
 
     public void setValue(T value){

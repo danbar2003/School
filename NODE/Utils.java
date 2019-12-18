@@ -111,14 +111,15 @@ public class Utils {
     }
 
     //both chains should not be circled
-    private static <T> Node<T> findMeetingNode(Node<T> chain1, Node<T> chain2) {
+    public static <T> Node<T> findMeetingNode(Node<T> chain1, Node<T> chain2) {
         int difference = Math.abs(chainLength(chain1) - chainLength(chain2));
 
         if (chainLength(chain1) > chainLength(chain2)) {
             for (int i = 0; i < difference; i++) {
                 chain1 = chain1.getNextNode();
             }
-        } else {
+        }
+        else {
             for (int i = 0; i < difference; i++) {
                 chain2 = chain2.getNextNode();
             }
@@ -128,7 +129,9 @@ public class Utils {
             if (chain1.hasNext() && chain2.hasNext()) {
                 chain1 = chain1.getNextNode();
                 chain2 = chain2.getNextNode();
-            } else {
+            }
+            else {
+                System.out.println("houston we have a problem");
                 return null;
             }
         }
@@ -145,11 +148,12 @@ public class Utils {
         return null;
     }
 
-    public <T> void breakChains(Node<T> chain1, Node<T> chain2) {
-        Node<T> meetingNode = findMeetingNode(chain1, chain2);
-        Node<T> beforeMeetingNode1 = findNodeBefore(chain1, meetingNode);
-        Node<T> beforeMeetingNode2 = findNodeBefore(chain2, meetingNode);
-        System.out.println("asd");
+    //both chains should not be circled
+    public static <T> void breakChains(Node<T> chain1, Node<T> chain2) {
+            Node<T> meetingNode = findMeetingNode(chain1, chain2);
+            Node<T> beforeMeetingNode1 = findNodeBefore(chain1, meetingNode);
+            Node<T> beforeMeetingNode2 = findNodeBefore(chain2, meetingNode);
+
         if (beforeMeetingNode1 != null && beforeMeetingNode2 != null) {
             while (beforeMeetingNode1.hasNext() && beforeMeetingNode2.hasNext()) {
                 beforeMeetingNode1.setNext(new Node<T>(beforeMeetingNode1.getNextNode().getValue(), beforeMeetingNode1.getNextNode().getNextNode()));
@@ -159,7 +163,5 @@ public class Utils {
             }
         }
     }
-
-
 }
 
